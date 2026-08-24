@@ -1,0 +1,38 @@
+{
+  "name": "charity-game",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "packageManager": "pnpm@11.19.0",
+  "scripts": {
+    "dev": "pnpm content:build && vite",
+    "content:build": "tsx tools/build-content.ts",
+    "content:check": "tsx tools/validate-content.ts",
+    "build": "pnpm content:build && tsc -b && vite build",
+    "build:e2e": "pnpm content:build && tsc -b && vite build --mode e2e",
+    "preview:e2e": "pnpm build:e2e && vite preview --host 127.0.0.1 --port 4173",
+    "test": "pnpm content:build && vitest run",
+    "test:e2e": "playwright test",
+    "test:smoke": "playwright test --config playwright.smoke.config.ts",
+    "check": "pnpm content:check && pnpm test && pnpm build"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "yaml": "^2.8.1",
+    "zod": "^4.1.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react": "^5.0.2",
+    "@playwright/test": "^1.55.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.3",
+    "vitest": "^3.2.4"
+  }
+}

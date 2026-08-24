@@ -1,0 +1,103 @@
+schema_version: 1
+id: charity.community-health-partnership
+category: charity
+name: Community Health Partnership
+status: published
+
+tags:
+  - health
+  - capacity-building
+  - local-governance
+
+availability:
+  first_day: 1
+  last_day: 30
+
+dossier:
+  summary: Builds a regional hospital and trains a permanent local workforce.
+  body_markdown: |
+    Community Health Partnership proposes a regional hospital governed jointly
+    with local health authorities.
+
+    **The operating plan includes:**
+
+    - Training and employing local physicians, nurses, and administrators.
+    - A five-year transfer of operating authority.
+    - A maintenance endowment controlled by the regional health board.
+    - Independent procurement review.
+
+    The organization can responsibly absorb up to **$1.2 billion** during the
+    current construction and training phase. Additional money would arrive
+    faster than the local workforce and procurement office can expand.
+
+rules:
+  disposition: beneficial
+  absorptive_capacity_dollars: 1200000000
+  fraud_fraction: 0.01
+  world_effects:
+    world_wellbeing: 8
+    health_capacity: 10
+    local_independence: 7
+  overfunding:
+    begins_above_dollars: 1200000000
+    effects:
+      waste: 3
+      fraud_exposure: 2
+
+initial_coverage:
+  - id: ordinary
+    priority: 10
+    when:
+      always: true
+    headline: Church fund backs locally staffed regional hospital
+    body_markdown: |
+      The church investment office announced a major grant for a new regional
+      hospital. The partnership says local workers will be trained to operate
+      the facility without permanent foreign management.
+
+memos:
+  - id: good-job-capacity
+    priority: 20
+    when:
+      allocation_at_most_dollars: 1200000000
+    deliver_after_days: 3
+    subject: Strong early operating plan
+    body_markdown: |
+      Local hiring and training milestones are ahead of schedule. This appears
+      to be the kind of durable institution the board hoped to support.
+  - id: procurement-warning
+    priority: 30
+    when:
+      allocation_above_dollars: 1200000000
+    deliver_after_days: 4
+    related_extra: overfunding-procurement
+    subject: Procurement capacity exceeded
+    body_markdown: |
+      The partnership cannot review bids at the rate required by the expanded
+      construction plan. Several untested intermediaries have appeared.
+
+extras:
+  - id: overfunding-procurement
+    priority: 30
+    when:
+      allocation_above_dollars: 1200000000
+    publish_after_days: 5
+    headline: Hospital windfall overwhelms procurement controls
+    body_markdown: |
+      Contractors have multiplied following the unusually large commitment,
+      while the hospital partnership struggles to review bids and verify costs.
+
+effects:
+  - when:
+      allocation_at_most_dollars: 1200000000
+    manifest_after_days: 1
+    apply:
+      world_wellbeing: 8
+      leadership_confidence: 3
+  - when:
+      allocation_above_dollars: 1200000000
+    manifest_after_days: 1
+    apply:
+      world_wellbeing: 5
+      fraud_exposure: 2
+      pr: -2

@@ -1,0 +1,80 @@
+schema_version: 1
+id: real-estate.mesa-commons
+category: real-estate
+name: Mesa Commons Community Land Trust
+status: published
+
+tags:
+  - housing
+  - mixed-income
+  - community-ownership
+
+availability:
+  first_day: 1
+  last_day: 30
+
+dossier:
+  summary: Mixed-income housing held permanently by a resident-led land trust.
+  body_markdown: |
+    Mesa Commons will construct 2,400 homes near existing transit. The land will
+    remain in a nonprofit trust with a resident-majority board, while the church
+    retains a long-term, capped-return construction holding.
+
+    Sixty percent of homes are income-restricted. Ground-floor leases prioritize
+    childcare, groceries, and locally owned services. Existing residents receive
+    a right to return before units are marketed publicly.
+
+rules:
+  disposition: beneficial
+  absorptive_capacity_dollars: 1800000000
+  world_effects:
+    world_wellbeing: 9
+    housing_security: 12
+    displacement: -6
+  holding:
+    initial_value_ratio: 1
+    success_value_ratio: 1.08
+  overfunding:
+    begins_above_dollars: 1800000000
+    effects:
+      waste: 2
+
+initial_coverage:
+  - id: ordinary
+    priority: 10
+    when:
+      always: true
+    headline: Church development arm backs mixed-income land trust
+    body_markdown: |
+      The project combines below-market homes with a capped investment return.
+      Housing advocates cautiously welcomed its resident governance provisions.
+
+memos:
+  - id: good-job-groundbreaking
+    priority: 20
+    when:
+      allocation_at_most_dollars: 1800000000
+    deliver_after_days: 4
+    subject: Mesa Commons groundbreaking
+    body_markdown: |
+      Permits, resident agreements, and construction bids are all in place. The
+      board commends the office for retaining the affordability covenant.
+
+extras: []
+
+effects:
+  - when:
+      allocation_at_most_dollars: 1800000000
+    manifest_after_days: 2
+    apply:
+      world_wellbeing: 9
+      housing_security: 12
+      holding_value_ratio: 1.08
+      leadership_confidence: 3
+  - when:
+      allocation_above_dollars: 1800000000
+    manifest_after_days: 2
+    apply:
+      world_wellbeing: 7
+      waste: 2
+      holding_value_ratio: 1.04

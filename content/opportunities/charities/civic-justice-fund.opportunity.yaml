@@ -1,0 +1,81 @@
+schema_version: 1
+id: charity.civic-justice-fund
+category: charity
+name: Civic Justice Action Fund
+status: published
+
+tags:
+  - advocacy
+  - civil-rights
+  - fraudulent
+
+availability:
+  first_day: 1
+  last_day: 30
+
+dossier:
+  summary: A highly visible advocacy fund promising rapid nationwide grants.
+  body_markdown: |
+    Civic Justice Action Fund promises to distribute large grants to local
+    organizers pursuing police accountability and equal treatment under law.
+
+    Its public materials are polished, but the application contains no audited
+    financial statements, named grant committee, or enforceable restrictions on
+    related-party payments. Staff recommend an independent audit before any
+    commitment.
+
+rules:
+  disposition: harmful
+  absorptive_capacity_dollars: 0
+  fraud_fraction: 1
+  world_effects:
+    world_wellbeing: -5
+    community_trust: -8
+    fraud_exposure: 10
+
+initial_coverage:
+  - id: ordinary
+    priority: 10
+    when:
+      always: true
+    headline: Church announces sweeping civil-rights grant
+    body_markdown: |
+      Advocates welcomed the size of the commitment and urged other large
+      institutions to follow. The recipient has not published a schedule for
+      distributing the funds.
+
+memos:
+  - id: accounts-empty
+    priority: 50
+    when:
+      allocation_above_dollars: 0
+    deliver_after_days: 2
+    related_extra: fraud-exposed
+    subject: Emergency audit — recipient accounts
+    body_markdown: |
+      The audit team cannot identify a single legitimate program disbursement.
+      The full transfer moved through related entities controlled by the fund's
+      officers. Recovery is considered unlikely.
+
+extras:
+  - id: fraud-exposed
+    priority: 50
+    when:
+      allocation_above_dollars: 0
+    publish_after_days: 3
+    headline: Church grant vanishes through network of insiders
+    body_markdown: |
+      Records reviewed by the newspaper show that the entire grant passed into
+      companies controlled by the charity's officers. No local program has
+      reported receiving funds.
+
+effects:
+  - when:
+      allocation_above_dollars: 0
+    manifest_after_days: 0
+    apply:
+      world_wellbeing: -5
+      fraud_loss_fraction: 1
+      fraud_exposure: 10
+      pr: -12
+      leadership_confidence: -8

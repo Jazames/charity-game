@@ -1,0 +1,568 @@
+[
+  {
+    "schema_version": 1,
+    "id": "charity.civic-justice-fund",
+    "category": "charity",
+    "name": "Civic Justice Action Fund",
+    "status": "published",
+    "tags": [
+      "advocacy",
+      "civil-rights",
+      "fraudulent"
+    ],
+    "availability": {
+      "first_day": 1,
+      "last_day": 30
+    },
+    "dossier": {
+      "summary": "A highly visible advocacy fund promising rapid nationwide grants.",
+      "body_markdown": "Civic Justice Action Fund promises to distribute large grants to local\norganizers pursuing police accountability and equal treatment under law.\n\nIts public materials are polished, but the application contains no audited\nfinancial statements, named grant committee, or enforceable restrictions on\nrelated-party payments. Staff recommend an independent audit before any\ncommitment.\n"
+    },
+    "rules": {
+      "disposition": "harmful",
+      "absorptive_capacity_dollars": 0,
+      "fraud_fraction": 1,
+      "world_effects": {
+        "world_wellbeing": -5,
+        "community_trust": -8,
+        "fraud_exposure": 10
+      }
+    },
+    "initial_coverage": [
+      {
+        "id": "ordinary",
+        "priority": 10,
+        "when": {
+          "always": true
+        },
+        "headline": "Church announces sweeping civil-rights grant",
+        "body_markdown": "Advocates welcomed the size of the commitment and urged other large\ninstitutions to follow. The recipient has not published a schedule for\ndistributing the funds.\n"
+      }
+    ],
+    "memos": [
+      {
+        "id": "accounts-empty",
+        "priority": 50,
+        "when": {
+          "allocation_above_dollars": 0
+        },
+        "deliver_after_days": 2,
+        "related_extra": "fraud-exposed",
+        "subject": "Emergency audit — recipient accounts",
+        "body_markdown": "The audit team cannot identify a single legitimate program disbursement.\nThe full transfer moved through related entities controlled by the fund's\nofficers. Recovery is considered unlikely.\n"
+      }
+    ],
+    "extras": [
+      {
+        "id": "fraud-exposed",
+        "priority": 50,
+        "when": {
+          "allocation_above_dollars": 0
+        },
+        "publish_after_days": 3,
+        "headline": "Church grant vanishes through network of insiders",
+        "body_markdown": "Records reviewed by the newspaper show that the entire grant passed into\ncompanies controlled by the charity's officers. No local program has\nreported receiving funds.\n"
+      }
+    ],
+    "effects": [
+      {
+        "when": {
+          "allocation_above_dollars": 0
+        },
+        "manifest_after_days": 0,
+        "apply": {
+          "world_wellbeing": -5,
+          "fraud_loss_fraction": 1,
+          "fraud_exposure": 10,
+          "pr": -12,
+          "leadership_confidence": -8
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "id": "charity.community-health-partnership",
+    "category": "charity",
+    "name": "Community Health Partnership",
+    "status": "published",
+    "tags": [
+      "health",
+      "capacity-building",
+      "local-governance"
+    ],
+    "availability": {
+      "first_day": 1,
+      "last_day": 30
+    },
+    "dossier": {
+      "summary": "Builds a regional hospital and trains a permanent local workforce.",
+      "body_markdown": "Community Health Partnership proposes a regional hospital governed jointly\nwith local health authorities.\n\n**The operating plan includes:**\n\n- Training and employing local physicians, nurses, and administrators.\n- A five-year transfer of operating authority.\n- A maintenance endowment controlled by the regional health board.\n- Independent procurement review.\n\nThe organization can responsibly absorb up to **$1.2 billion** during the\ncurrent construction and training phase. Additional money would arrive\nfaster than the local workforce and procurement office can expand.\n"
+    },
+    "rules": {
+      "disposition": "beneficial",
+      "absorptive_capacity_dollars": 1200000000,
+      "fraud_fraction": 0.01,
+      "world_effects": {
+        "world_wellbeing": 8,
+        "health_capacity": 10,
+        "local_independence": 7
+      },
+      "overfunding": {
+        "begins_above_dollars": 1200000000,
+        "effects": {
+          "waste": 3,
+          "fraud_exposure": 2
+        }
+      }
+    },
+    "initial_coverage": [
+      {
+        "id": "ordinary",
+        "priority": 10,
+        "when": {
+          "always": true
+        },
+        "headline": "Church fund backs locally staffed regional hospital",
+        "body_markdown": "The church investment office announced a major grant for a new regional\nhospital. The partnership says local workers will be trained to operate\nthe facility without permanent foreign management.\n"
+      }
+    ],
+    "memos": [
+      {
+        "id": "good-job-capacity",
+        "priority": 20,
+        "when": {
+          "allocation_at_most_dollars": 1200000000
+        },
+        "deliver_after_days": 3,
+        "subject": "Strong early operating plan",
+        "body_markdown": "Local hiring and training milestones are ahead of schedule. This appears\nto be the kind of durable institution the board hoped to support.\n"
+      },
+      {
+        "id": "procurement-warning",
+        "priority": 30,
+        "when": {
+          "allocation_above_dollars": 1200000000
+        },
+        "deliver_after_days": 4,
+        "related_extra": "overfunding-procurement",
+        "subject": "Procurement capacity exceeded",
+        "body_markdown": "The partnership cannot review bids at the rate required by the expanded\nconstruction plan. Several untested intermediaries have appeared.\n"
+      }
+    ],
+    "extras": [
+      {
+        "id": "overfunding-procurement",
+        "priority": 30,
+        "when": {
+          "allocation_above_dollars": 1200000000
+        },
+        "publish_after_days": 5,
+        "headline": "Hospital windfall overwhelms procurement controls",
+        "body_markdown": "Contractors have multiplied following the unusually large commitment,\nwhile the hospital partnership struggles to review bids and verify costs.\n"
+      }
+    ],
+    "effects": [
+      {
+        "when": {
+          "allocation_at_most_dollars": 1200000000
+        },
+        "manifest_after_days": 1,
+        "apply": {
+          "world_wellbeing": 8,
+          "leadership_confidence": 3
+        }
+      },
+      {
+        "when": {
+          "allocation_above_dollars": 1200000000
+        },
+        "manifest_after_days": 1,
+        "apply": {
+          "world_wellbeing": 5,
+          "fraud_exposure": 2,
+          "pr": -2
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "id": "company.helios-fusion",
+    "category": "company",
+    "name": "Helios Fusion Works",
+    "status": "published",
+    "tags": [
+      "energy",
+      "speculative",
+      "fusion"
+    ],
+    "availability": {
+      "first_day": 1,
+      "last_day": 20
+    },
+    "dossier": {
+      "summary": "A long-shot demonstration plant with transformative potential.",
+      "body_markdown": "Helios proposes a demonstration-scale fusion power plant using a new magnet\ndesign. No commercial reactor using this approach has been completed.\n\nThe engineering review finds the design internally consistent but warns that\nthe company needs at least **$4 billion committed by day 12** to order the\nspecialized magnets in time. A smaller or later investment will leave an\nincomplete plant and little salvage value.\n"
+    },
+    "rules": {
+      "disposition": "speculative",
+      "world_effects": {
+        "world_wellbeing": 12,
+        "clean_energy": 15
+      },
+      "holding": {
+        "initial_value_ratio": 1,
+        "success_value_ratio": 3.5,
+        "failure_value_ratio": 0.08
+      },
+      "success": {
+        "all": [
+          {
+            "minimum_total_allocation_dollars": 4000000000
+          },
+          {
+            "committed_by_day": 12
+          }
+        ]
+      }
+    },
+    "initial_coverage": [
+      {
+        "id": "ordinary",
+        "priority": 10,
+        "when": {
+          "always": true
+        },
+        "headline": "Church takes long-shot position in fusion developer",
+        "body_markdown": "The investment gives the church a substantial holding in an experimental\nenergy company. Analysts described the project as potentially important\nbut far from commercially proven.\n"
+      }
+    ],
+    "memos": [
+      {
+        "id": "ignition-confirmed",
+        "priority": 40,
+        "when": {
+          "success_conditions_met": true
+        },
+        "deliver_after_days": 8,
+        "related_extra": "profitable-breakthrough",
+        "subject": "Helios test result confirmed",
+        "body_markdown": "Independent observers have verified the demonstration. Public disclosure\nis expected tomorrow, and the institution's holding will appreciate\nsubstantially.\n"
+      },
+      {
+        "id": "magnet-contract-lost",
+        "priority": 40,
+        "when": {
+          "success_conditions_met": false
+        },
+        "deliver_after_days": 8,
+        "related_extra": "failed-project",
+        "subject": "Helios construction program terminated",
+        "body_markdown": "The company missed the magnet order window. Management does not have a\ncredible path to complete the plant with the capital and time remaining.\n"
+      }
+    ],
+    "extras": [
+      {
+        "id": "profitable-breakthrough",
+        "priority": 40,
+        "when": {
+          "success_conditions_met": true
+        },
+        "publish_after_days": 9,
+        "headline": "Church reaps enormous gain from energy breakthrough",
+        "body_markdown": "Helios has demonstrated its reactor design, sharply increasing the value\nof the church's holding. Critics questioned whether a tax-exempt religious\ninstitution should profit so heavily from essential energy technology.\n"
+      },
+      {
+        "id": "failed-project",
+        "priority": 40,
+        "when": {
+          "success_conditions_met": false
+        },
+        "publish_after_days": 9,
+        "headline": "Billions stranded in church fusion gamble",
+        "body_markdown": "Helios has halted construction after failing to secure critical equipment.\nThe church's speculative holding is now valued at a fraction of its cost.\n"
+      }
+    ],
+    "effects": [
+      {
+        "when": {
+          "success_conditions_met": true
+        },
+        "manifest_after_days": 1,
+        "apply": {
+          "world_wellbeing": 12,
+          "clean_energy": 15,
+          "holding_value_ratio": 3.5,
+          "pr": -2
+        }
+      },
+      {
+        "when": {
+          "success_conditions_met": false
+        },
+        "manifest_after_days": 1,
+        "apply": {
+          "world_wellbeing": 0,
+          "holding_value_ratio": 0.08,
+          "pr": -7,
+          "leadership_confidence": -5
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "id": "company.summit-mirage-gaming",
+    "category": "company",
+    "name": "Summit Mirage Gaming",
+    "status": "published",
+    "tags": [
+      "casino",
+      "addictive-product",
+      "harmful"
+    ],
+    "availability": {
+      "first_day": 1,
+      "last_day": 30
+    },
+    "dossier": {
+      "summary": "A profitable casino operator expanding app-based wagering.",
+      "body_markdown": "Summit Mirage operates destination casinos and a rapidly growing mobile\nwagering platform. Its cash flow is strong and its expansion plan is fully\npermitted.\n\nCompliance staff note that a large share of revenue comes from a small group\nof persistent gamblers. The company has opposed deposit limits and funds\nadvertising designed to reactivate customers who attempt to stop gambling.\n"
+    },
+    "rules": {
+      "disposition": "harmful",
+      "world_effects": {
+        "world_wellbeing": -9,
+        "addiction_harm": 12
+      },
+      "holding": {
+        "initial_value_ratio": 1,
+        "success_value_ratio": 1.4
+      }
+    },
+    "initial_coverage": [
+      {
+        "id": "ordinary",
+        "priority": 10,
+        "when": {
+          "always": true
+        },
+        "headline": "Church fund buys stake in expanding casino operator",
+        "body_markdown": "The investment office described the casino company as a durable consumer\nbusiness. Critics said the holding conflicts with the church's public\nteaching against gambling.\n"
+      }
+    ],
+    "memos": [
+      {
+        "id": "retention-program",
+        "priority": 30,
+        "when": {
+          "allocation_above_dollars": 0
+        },
+        "deliver_after_days": 3,
+        "related_extra": "addiction-investigation",
+        "subject": "Summit Mirage customer-retention review",
+        "body_markdown": "The company's growth is being driven by high-frequency customers enrolled\nin an aggressive reactivation program. Legal believes the practice is\npermitted. Welfare staff strongly object.\n"
+      }
+    ],
+    "extras": [
+      {
+        "id": "addiction-investigation",
+        "priority": 30,
+        "when": {
+          "allocation_above_dollars": 0
+        },
+        "publish_after_days": 4,
+        "headline": "Church profits from casino's most vulnerable customers",
+        "body_markdown": "Internal records show that Summit Mirage targets customers who previously\nattempted to close their accounts. The church remains one of the operator's\nlargest outside shareholders.\n"
+      }
+    ],
+    "effects": [
+      {
+        "when": {
+          "allocation_above_dollars": 0
+        },
+        "manifest_after_days": 3,
+        "apply": {
+          "world_wellbeing": -9,
+          "addiction_harm": 12,
+          "holding_value_ratio": 1.4,
+          "pr": -10,
+          "leadership_confidence": -4
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "id": "real-estate.mesa-commons",
+    "category": "real-estate",
+    "name": "Mesa Commons Community Land Trust",
+    "status": "published",
+    "tags": [
+      "housing",
+      "mixed-income",
+      "community-ownership"
+    ],
+    "availability": {
+      "first_day": 1,
+      "last_day": 30
+    },
+    "dossier": {
+      "summary": "Mixed-income housing held permanently by a resident-led land trust.",
+      "body_markdown": "Mesa Commons will construct 2,400 homes near existing transit. The land will\nremain in a nonprofit trust with a resident-majority board, while the church\nretains a long-term, capped-return construction holding.\n\nSixty percent of homes are income-restricted. Ground-floor leases prioritize\nchildcare, groceries, and locally owned services. Existing residents receive\na right to return before units are marketed publicly.\n"
+    },
+    "rules": {
+      "disposition": "beneficial",
+      "absorptive_capacity_dollars": 1800000000,
+      "world_effects": {
+        "world_wellbeing": 9,
+        "housing_security": 12,
+        "displacement": -6
+      },
+      "holding": {
+        "initial_value_ratio": 1,
+        "success_value_ratio": 1.08
+      },
+      "overfunding": {
+        "begins_above_dollars": 1800000000,
+        "effects": {
+          "waste": 2
+        }
+      }
+    },
+    "initial_coverage": [
+      {
+        "id": "ordinary",
+        "priority": 10,
+        "when": {
+          "always": true
+        },
+        "headline": "Church development arm backs mixed-income land trust",
+        "body_markdown": "The project combines below-market homes with a capped investment return.\nHousing advocates cautiously welcomed its resident governance provisions.\n"
+      }
+    ],
+    "memos": [
+      {
+        "id": "good-job-groundbreaking",
+        "priority": 20,
+        "when": {
+          "allocation_at_most_dollars": 1800000000
+        },
+        "deliver_after_days": 4,
+        "subject": "Mesa Commons groundbreaking",
+        "body_markdown": "Permits, resident agreements, and construction bids are all in place. The\nboard commends the office for retaining the affordability covenant.\n"
+      }
+    ],
+    "extras": [],
+    "effects": [
+      {
+        "when": {
+          "allocation_at_most_dollars": 1800000000
+        },
+        "manifest_after_days": 2,
+        "apply": {
+          "world_wellbeing": 9,
+          "housing_security": 12,
+          "holding_value_ratio": 1.08,
+          "leadership_confidence": 3
+        }
+      },
+      {
+        "when": {
+          "allocation_above_dollars": 1800000000
+        },
+        "manifest_after_days": 2,
+        "apply": {
+          "world_wellbeing": 7,
+          "waste": 2,
+          "holding_value_ratio": 1.04
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "id": "real-estate.temple-view-enclave",
+    "category": "real-estate",
+    "name": "Temple View Enclave",
+    "status": "published",
+    "tags": [
+      "luxury",
+      "displacement",
+      "harmful"
+    ],
+    "availability": {
+      "first_day": 1,
+      "last_day": 30
+    },
+    "dossier": {
+      "summary": "A high-return luxury district requiring demolition of occupied homes.",
+      "body_markdown": "Temple View Enclave proposes luxury towers, private retail, and a convention\nhotel on centrally located land. The projected return is unusually strong.\n\nThe site contains 640 occupied, low-rent homes and several small businesses.\nThe proposal funds short-term relocation payments but provides no right to\nreturn. Its private streets would remove an existing pedestrian route to\ntransit.\n"
+    },
+    "rules": {
+      "disposition": "harmful",
+      "world_effects": {
+        "world_wellbeing": -7,
+        "displacement": 14,
+        "housing_security": -10
+      },
+      "holding": {
+        "initial_value_ratio": 1,
+        "success_value_ratio": 1.7
+      }
+    },
+    "initial_coverage": [
+      {
+        "id": "ordinary",
+        "priority": 10,
+        "when": {
+          "always": true
+        },
+        "headline": "Church unveils luxury district beside downtown holdings",
+        "body_markdown": "The development office says the project will expand the tax base and draw\nvisitors. Tenant groups say hundreds of households will be forced out.\n"
+      }
+    ],
+    "memos": [
+      {
+        "id": "demolition-complete",
+        "priority": 30,
+        "when": {
+          "allocation_above_dollars": 0
+        },
+        "deliver_after_days": 2,
+        "related_extra": "displacement-camp",
+        "subject": "Site clearance completed",
+        "body_markdown": "Demolition is ahead of schedule. Outreach staff report that relocation\nhotels have reached capacity and dozens of former tenants lack permanent\nhousing.\n"
+      }
+    ],
+    "extras": [
+      {
+        "id": "displacement-camp",
+        "priority": 30,
+        "when": {
+          "allocation_above_dollars": 0
+        },
+        "publish_after_days": 3,
+        "headline": "Families displaced by church luxury project remain unhoused",
+        "body_markdown": "Former residents have erected a temporary camp two blocks from the cleared\ndevelopment site. The church's project is expected to produce substantial\nreturns when its first tower opens.\n"
+      }
+    ],
+    "effects": [
+      {
+        "when": {
+          "allocation_above_dollars": 0
+        },
+        "manifest_after_days": 2,
+        "apply": {
+          "world_wellbeing": -7,
+          "displacement": 14,
+          "housing_security": -10,
+          "holding_value_ratio": 1.7,
+          "pr": -11,
+          "leadership_confidence": -3
+        }
+      }
+    ]
+  }
+]
